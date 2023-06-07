@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PW web dev class</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="bg-slate-950">
+    <!-- navbar starts here -->
+    <nav class="w-full h-14 bg-slate-200 flex justify-between px-4 md:px-4 items-center">
+       <div class="rounded-sm w-52">
+        <a href="https://www.pwskills.com">
+            <img class="w-auto h-14 rounded-3xl" src="data:image/jpeg;base64,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" alt="">
+        </a>
+       </div>
+       <ul class="md:flex font-semibold hidden">
+        <li class="mx-[10px] cursor-pointer">Home</li>
+        <li class="mx-[10px] cursor-pointer">About US</li>
+        <li class="mx-[10px] cursor-pointer">Contact US</li>
+       </ul> 
+       <div class="hidden md:block px-2 py-2">
+        <button class="bg-blue-700 text-white w-32 p-2 mt-2 font-bold rounded-md hover:bg-slate-800 hover:text-white">Login/Register</button>
+       </div>
+       <div class="md:hidden">
+        <a class="text-4xl font-extrabold" href="#">&#8801</a>
+       </div>
+    </nav>
+    <!-- navbar ends here -->
+
+
+<!-- image section starts here -->
+    <header class="w-full h-auto">
+        <img class="hidden md:block w-full" src="https://cdn.pwskills.com/assets/uploads/banners/6471f0096977cc7dd8dee68d/web.jpg" alt="">
+        <img class=" md:hidden w-full" src="https://cdn.pwskills.com/assets/uploads/banners/63a18cca807628f5968f528a/web.jpg" alt="">
+
+    </header>
+    <!-- image section ends here -->
+
+
+    <!-- our students sections -->
+    <div class="h-auto w-100 flex flex-wrap flex-col items-center text-center p-10">
+        <div>
+            <p class="text-white font-extrabold text-2xl md:text-4xl">"Pure Hardwork,No Shortcuts!"</p>
+            <div class="border-b-4 w-36 h-1 border-yellow-400 m-auto mt-2 rounded-2xl md:mt-4 md:mb-4"></div>
+        </div>
+        <div class="w-full flex flex-wrap justify-evenly">
+            <div class="w-46 flex flex-col items-center mb-12 ">
+                <img class="w-44 h-44" src="https://pwskills.com/images/landing-page/statistics/books-icon.svg" alt="">
+                <p class="text-3xl font-bold text-white">600+</p>
+                <p class="text-2xl font-bold text-gray-500">Diffrent Cources</p>
+            </div>
+            <div class="w-46 flex flex-col items-center mb-12 ">
+                <img class="w-44 h-44" src="https://pwskills.com/images/landing-page/statistics/student-icon.svg" alt="">
+                <p class="text-3xl font-bold text-white">7,00,000+
+                    </p>
+                <p class="text-2xl font-bold text-gray-500">Students Enrolled</p>
+            </div>
+            <div class="w-46 flex flex-col items-center mb-12 ">
+                <img class="w-44 h-44" src="https://pwskills.com/images/landing-page/statistics/credit-card-icon.svg" alt="">
+                <p class="text-3xl font-bold text-white">10,000+
+                    </p>
+                <p class="text-2xl font-bold text-gray-500">Successful Transition</p>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- our products starts from here -->
+    
+    <!-- our students sections -->
+    <div class="h-auto w-100 flex flex-wrap flex-col items-center text-center p-10 mt-16">
+        <div>
+            <p class="text-white font-extrabold text-2xl md:text-4xl">"Our Products"</p>
+            <div class="border-b-4 w-36 h-1 border-yellow-400 m-auto mt-2 rounded-2xl md:mt-4 md:mb-4"></div>
+        </div>
+        <div class="w-full flex flex-wrap justify-evenly mt-16">
+            <div class="w-64 flex flex-col items-center mb-12 border-white border-2 p-4 rounded-3xl ">
+                <img class="w-44 h-36" src="https://pwskills.com/images/landing-page/products/neurolab-icon.svg" alt="">
+                <p class="text-2xl font-bold text-white">PW Skills Lab</p>
+                <p class="text-xl  text-gray-500 ">Supercharge your project development with our robust lab.</p>
+            </div>
+            <div class="w-64 flex flex-col items-center mb-12 border-white border-2 p-6 rounded-3xl">
+                <img class="w-44 h-44" src="https://pwskills.com/images/landing-page/products/jobPortal-icon.svg" alt="">
+                <p class="text-2xl font-bold text-white">Job Portal</p>
+                <p class="text-xl  text-gray-500">Use exceptional templates for a stand-out resume minus the sign up process.</p>
+            </div>
+
+            <div class="w-64 flex flex-col items-center mb-12  border-white border-2 p-4 rounded-3xl">
+                <img class="w-44 h-44" src="https://pwskills.com/images/landing-page/products/Internship-icon.svg" alt="">
+                <p class="text-2xl font-bold text-white">Experience portal
+                  </p>
+                <p class="text-xl  text-gray-500">  PW Skills's self-paced experience portal prioritises hands-on training with 570+ internship projects.</p>
+            </div>
+
+            <div class="w-64 flex flex-col items-center mb-12 border-white border-2 p-6 rounded-3xl">
+                <img class="w-44 h-44" src="https://pwskills.com/images/landing-page/products/affilitatePortal-icon.svg" alt="">
+                <p class="text-2xl font-bold text-white">
+                    Become an affiliate
+                   </p>
+                <p class="text-xl  text-gray-500"> Explore affiliate marketing opportunities with PW Skills and attain financial freedom.</p>
+            </div>
+
+            <div class="w-64 flex flex-col items-center mb-12 border-white border-2 p-6 rounded-3xl">
+                <img class="w-44 h-36" src="https://pwskills.com/images/landing-page/products/halloffame-icon.svg" alt="">
+                <p class="text-2xl font-bold text-white">
+                    Hall of fame
+               </p>
+                <p class="text-xl  text-gray-500">     Our student placements and 100K+ career transitions speak volumes about our courses.</p>
+            </div>
+          
+
+        </div>
+    </div>
+    <!-- ends the products section -->
+
+    <!-- footer section -->
+    <footer class="w-full bg-gray-900 px-4 text-white pt-8 flex flex-col md:flex-row flex-wrap justify-between md:px-12px items-center pr-9 pl-9 self-center content-center cursor-pointer">
+
+        <div class="flex flex-col justify-around mb-10">
+            <img class="h-16 w-40" src="https://pwskills.com/images/PWSkills-white.png" alt="">
+            <p class=" my-4">
+                <b> Email us: </b> support@pwskills.com
+            </p>
+            <p class=" my-4"><b> Call us:</b> +91 7666122288</p>
+
+            <img class="h-20 w-44 my-4" src="https://pwskills.com/images/iso-9001-2015.svg" alt="">
+
+        </div>
+
+        <div class="mb-10">
+            <p class="text-3xl font-bold ">
+                PW Skills
+            </p>
+            <div class="border-yellow-400 border-2 mt-2"></div>
+            <ul>
+                <li>About Us</li>
+                <li>FAQs</li>
+                <li>Privacy Policy</li>
+            </ul>
+        </div>
+
+        <div class="mb-10">
+            <p class="text-3xl font-bold ">
+                Products
+                </p>
+            <div class="border-yellow-400 border-2 mt-2"></div>
+            <ul>
+                <li>PW Skills Lab</li>
+               
+               
+               <li>Become an affiliate</li> 
+               <li>Hall of fame</li> 
+                <li> Job Portal</li>
+                <li> Experience portal</li>
+            </ul>
+        </div>
+
+        <div class="mb-10">
+            <p class="text-3xl font-bold ">
+                Links
+            </p>
+            <div class="border-yellow-400 border-2 mt-2"></div>
+            <ul>
+                <li>
+                    Contact us</li>
+                <li>
+                    Job assistance</li>
+                <li>
+                    Terms and conditions</li>
+            </ul>
+        </div>
+
+    </footer>
+</body>
+
+</html>

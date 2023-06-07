@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Lifechem Pharma</title> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/267448ee0a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://kit.fontawesome.com/267448ee0a.css" crossorigin="anonymous">
+
+    <!-- internal css  for inquiery form-->
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        * {box-sizing: border-box;}
+        
+        /* Button used to open the contact form - fixed at the bottom of the page */
+        .open-button {
+          background-color: blue;
+          color: white;
+          padding: 16px 20px;
+          border: none;
+          cursor: pointer;
+          opacity: 0.8;
+          position: sticky;
+          bottom: 23px;
+          right: 28px;
+          width: 180px;
+        }
+        
+        /* The popup form - hidden by default */
+        .form-popup {
+          display: none;
+          position: absolute;
+          bottom: 0;
+          right: 15px;
+          border: 3px solid #f1f1f1;
+          z-index: 9;
+        }
+        
+        /* Add styles to the form container */
+        .form-container {
+          max-width: 300px;
+          padding: 10px;
+          background-color: white;
+        }
+        
+        /* Full-width input fields */
+        .form-container input[type=text], .form-container input[type=email], .form-container input[type=number],.form-container input[type=tel],.form-container input[type=radio]   {
+          width: 100%;
+          padding: 15px;
+          margin: 5px 0 22px 0;
+          border: none;
+          background: #f1f1f1;
+        }
+        
+        /* When the inputs get focus, do something */
+        .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+          background-color: #ddd;
+          outline: none;
+        }
+        
+        /* Set a style for the submit/login button */
+        .form-container .btn {
+          background-color: #04AA6D;
+          color: white;
+          padding: 16px 20px;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+          margin-bottom:10px;
+          opacity: 0.8;
+        }
+        
+        /* Add a red background color to the cancel button */
+        .form-container .cancel {
+          background-color: red;
+        }
+        
+        /* Add some hover effects to buttons */
+        .form-container .btn:hover, .open-button:hover {
+          opacity: 1;
+        }
+
+        /* dropdown css */
+        /*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: darkblue;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  
+  background-color: darkblue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+        </style>
+
+</head>
+<body>
+    <!-- header section start -->
+    <header id="header">
+        <nav>
+            <h2 class="logo">Lifechem<span class="span">Pharma</span></h2>
+        <ul>
+            <li><a href="#header">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="index.html">About Us</a></li>
+            <li><a href="r&d.html">Research and Development</a></li>
+            <li><a href="visionvalues.html">Vision and Values</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+        </ul>
+        <button class="open-button" onclick="openForm()">Inquiery now</button>
+    </nav>
+        <div class="content">
+            <h1>MANUFACTURER OF SPECIALITY CHEMICALS,
+                PHARMA INTERMEDIATES</h1>
+    
+        </div>  
+        
+        
+    </header>
+    <!-- inquire now form -->
+    <!-- The form -->
+<div class="form-popup" id="myForm">
+    <form action="/action_page.php" class="form-container">
+      <h1>inquire Now</h1>
+  
+      <label for="username">Enter UserName:</label>
+      <input type="text" name="username" id="username" placeholder="enter name" required>
+      
+      <label for="email"><b>Email</b></label>
+      <input type="email" placeholder="Enter Email" name="email" required>
+      
+      <label for="Contact"><b>Contact</b></label>
+      <input type="tel" placeholder="enter number" name="number" required>
+      <div class="custom-select" style="width:200px;">
+      <label for="Inq"><b>Inquiery About</b></label>
+      <select name="Inquiry" >
+        <option value="Select-product">Select Product</option>
+        
+        <option value="Trific Derivatieves">Trific Derivatieves</option>
+        <option value="Iodine Derivatieves">Iodine Derivatieves </option>
+        <option value="Catalyst">Catalyst</option>
+        <option value="Intermediates">Intermediates</option>
+        <option value="Hetrocyclics Compound">Hetrocyclics Compound</option>
+        <option value="Peptide Coupling Reagent">Peptide Coupling Reagent</option>
+        <option value="Others">Others</option>
+      </select>
+      
+    </div>
+    <br>
+      <button type="submit" class="btn">Submit</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+  </div>
+<!-- content -->
+  <div class="second">
+  <h2>As a growing pharma company, we stand for our upscale quality and credible professionalism in the trade and export of high-quality <span class="span">pharmaceuticals.</span> </h2>
+</div>
+
+  <!-- about us section -->
+    <section id="aboutus">
+        <div class="about-us">
+            <h1>About Us</h1>
+        Since its establishment, Lifechem Pharma has been providing high-quality Specialty chemicals, Intermediates nationwide. Since 2015, we have participated in the manufacturing and development of various high-quality Specialty chemicals and advanced intermediates.
+
+        The company is managed by energetic and highly qualified partners and professionals who have extensive experience in the manufacturing of Specialty chemicals, Intermediates.
+
+        We are equipped with modern production facilities and the most advanced technology to realize the quality products we produce.
+    </div>
+</center>
+    </section>
+    <section class="reachus">
+      <div class="one"><h1>Reach Us</h1>
+        <br><br>
+      <p> <b> OUR R&D CENTER</b>
+  
+          We have highly equipped the QC laboratory with the most advanced instruments, such as HPLC, GC-HS, FTIR, UV spectrophotometer and colorimeter . Our QC laboratory is supported by a team of highly skilled chemists. We follow strict and up-to-date guidelines and implement the most powerful testing methods to ensure that our products are of the highest quality when they leave our site and arrive at their destination.</p>
+      </div>
+      <div class="two">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3710.686304098397!2d72.98820581475505!3d21.55911797483715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f0aa143cb73%3A0x8875550cdddb3db9!2sLife%20Chem%20Pharma!5e0!3m2!1sen!2sin!4v1675428809702!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  </section>
+  
+
+  <section class="other">
+
+    <div id="demo1"><img src="./assets/demo1.jpeg" alt=""></div>
+    <div id="demo2"><img src="./assets/demo2.jpeg" alt=""></div>
+    </section>
+    
+    
+      
+    <!-- footer section -->
+    <section id="footer">
+    <footer class="footer">
+
+        <a href="https://www.linkedin.com/company/life-chem-pharma/"><i class="fa-brands fa-linkedin"></i></a>
+
+        <p>© 2023 Lifechem Pharma. All Rights Reserved.</p>
+
+        <div class="back-to-section">
+        <ul>
+            <li><a href="#header"> Home </a> </li>
+            <li><a href="#about-us"> About Us </a> </li>
+            <li><a href="products.html"> Products </a> </li>
+            <li><a href="contactus.html"> Contact-us </a> </li>
+            <li><a href="#"> Feedback </a> </li>
+
+        </ul>
+        
+    </div>
+    <div class="backtohome">
+        <a href="#header"><i class="fa-sharp fa-solid fa-up-long"></i>
+        </a>
+    </div>   
+
+       </footer>
+</section>
+
+
+
+<script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+    
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+    </script>
+    <script>
+      var x, i, j, l, ll, selElmnt, a, b, c;
+      /*look for any elements with the class "custom-select":*/
+      x = document.getElementsByClassName("custom-select");
+      l = x.length;
+      for (i = 0; i < l; i++) {
+        selElmnt = x[i].getElementsByTagName("select")[0];
+        ll = selElmnt.length;
+        /*for each element, create a new DIV that will act as the selected item:*/
+        a = document.createElement("DIV");
+        a.setAttribute("class", "select-selected");
+        a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+        x[i].appendChild(a);
+        /*for each element, create a new DIV that will contain the option list:*/
+        b = document.createElement("DIV");
+        b.setAttribute("class", "select-items select-hide");
+        for (j = 1; j < ll; j++) {
+          /*for each option in the original select element,
+          create a new DIV that will act as an option item:*/
+          c = document.createElement("DIV");
+          c.innerHTML = selElmnt.options[j].innerHTML;
+          c.addEventListener("click", function(e) {
+              /*when an item is clicked, update the original select box,
+              and the selected item:*/
+              var y, i, k, s, h, sl, yl;
+              s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+              sl = s.length;
+              h = this.parentNode.previousSibling;
+              for (i = 0; i < sl; i++) {
+                if (s.options[i].innerHTML == this.innerHTML) {
+                  s.selectedIndex = i;
+                  h.innerHTML = this.innerHTML;
+                  y = this.parentNode.getElementsByClassName("same-as-selected");
+                  yl = y.length;
+                  for (k = 0; k < yl; k++) {
+                    y[k].removeAttribute("class");
+                  }
+                  this.setAttribute("class", "same-as-selected");
+                  break;
+                }
+              }
+              h.click();
+          });
+          b.appendChild(c);
+        }
+        x[i].appendChild(b);
+        a.addEventListener("click", function(e) {
+            /*when the select box is clicked, close any other select boxes,
+            and open/close the current select box:*/
+            e.stopPropagation();
+            closeAllSelect(this);
+            this.nextSibling.classList.toggle("select-hide");
+            this.classList.toggle("select-arrow-active");
+          });
+      }
+      function closeAllSelect(elmnt) {
+        /*a function that will close all select boxes in the document,
+        except the current select box:*/
+        var x, y, i, xl, yl, arrNo = [];
+        x = document.getElementsByClassName("select-items");
+        y = document.getElementsByClassName("select-selected");
+        xl = x.length;
+        yl = y.length;
+        for (i = 0; i < yl; i++) {
+          if (elmnt == y[i]) {
+            arrNo.push(i)
+          } else {
+            y[i].classList.remove("select-arrow-active");
+          }
+        }
+        for (i = 0; i < xl; i++) {
+          if (arrNo.indexOf(i)) {
+            x[i].classList.add("select-hide");
+          }
+        }
+      }
+      /*if the user clicks anywhere outside the select box,
+      then close all select boxes:*/
+      document.addEventListener("click", closeAllSelect);
+      </script>
+      
+</body>
+</html>

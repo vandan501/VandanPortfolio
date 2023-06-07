@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Roboto", sans-serif;
+      }
+      body {
+        border: 5px solid yellow;
+        padding: 20px;
+        margin: 60px;
+        display: flex;
+        flex-flow: column;
+      }
+      h1 {
+        color: aqua;
+        text-align: center;
+      }
+      button {
+        display: flex;
+        align-items: center;
+        align-self: center;
+        margin-bottom: 50px;
+        background-color: blue;
+        position: relative;
+        justify-content: center;
+        color: white;
+        font-size: larger;
+        width: 100px;
+        margin-top: 60px;
+        height: 40px;
+        border: none;
+      }
+      button:hover {
+        display: flex;
+        align-items: center;
+        align-self: center;
+        margin-bottom: 50px;
+
+        background-color: whitesmoke;
+        position: relative;
+        /* left: 500px; */
+        color: black;
+        font-size: larger;
+        width: 100px;
+        margin-top: 60px;
+        height: 40px;
+      }
+      #quiz {
+        font-size: 20px;
+        margin-bottom: 10px;
+        font-weight: 400;
+      }
+      #results {
+        margin-top: 50px;
+        text-align: center;
+        color: aqua;
+        font-size: 25px;
+        font-weight: 700;
+      }
+
+      input[type="radio"]:checked:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        position: relative;
+        right: 5px;
+        background-color: chartreuse;
+        content: "";
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+      }
+    </style>
+  </head>
+  <body>
+    <body style="background-color: black; color: whitesmoke">
+      <h1>JavaScript Quiz App</h1>
+      <div id="quiz"></div>
+
+      <div id="results"></div>
+      <button id="submit">submit</button>
+
+      <script>
+        const quizContainer = document.getElementById("quiz");
+        const submitButton = document.getElementById("submit");
+        const resultsContainer = document.getElementById("results");
+
+        const myQuestions = [
+          {
+            question:
+              "Which data structure is best suited for implementing a stack?",
+            answers: {
+              a: "Linked list",
+              b: "Queue",
+              c: "Array",
+            },
+            correctAnswer: "a",
+          },
+          {
+            question: " Which sorting algorithm has the worst time complexity?",
+            answers: {
+              a: "Bubble sort",
+              b: "Merge sort",
+              c: " Quick sort",
+            },
+            correctAnswer: "b",
+          },
+          {
+            question:
+              "Which search algorithm is guaranteed to find the target element in a sorted array?",
+            answers: {
+              a: "Binary search",
+              b: "Linear search",
+              c: "Depth-first search",
+            },
+            correctAnswer: "c",
+          },
+          {
+            question:
+              "Which data structure is used to store elements in a non-linear, hierarchical way?",
+            answers: {
+              a: " Array",
+              b: "Linked list",
+              c: "Tree",
+            },
+            correctAnswer: "b",
+          },
+          {
+            question:
+              "Which algorithm is used to find the shortest path between two nodes in a graph with weighted edges?",
+            answers: {
+              a: " Dijkstra's algorithm",
+              b: " Breadth-first search",
+              c: "Depth-first search",
+            },
+            correctAnswer: "c",
+          },
+          {
+            question:
+              "Which data structure is used to implement a priority queue?",
+            answers: {
+              a: "  Stack",
+              b: "queue",
+              c: "heap",
+            },
+            correctAnswer: "a",
+          },
+          {
+            question:
+              "Which search algorithm is used to traverse a binary tree in a level-by-level manner?",
+            answers: {
+              a: " Linear Search",
+              b: " Breadth-first search",
+              c: "Depth-first search",
+            },
+            correctAnswer: "b",
+          },
+          {
+            question:
+              "Which data structure is used to maintain a collection of elements with no duplicates?",
+            answers: {
+              a: " set",
+              b: "Map",
+              c: "queue",
+            },
+            correctAnswer: "b",
+          },
+          {
+            question:
+              "Which sorting algorithm has the best time complexity in the average case?",
+            answers: {
+              a: "Insertion sort",
+              b: "Quick sort",
+              c: "Bubble sort",
+            },
+            correctAnswer: "b",
+          },
+          {
+            question: "Which data structure is used to implement a hash table?",
+            answers: {
+              a: " Array",
+              b: "Linked list",
+              c: "Tree",
+            },
+            correctAnswer: "b",
+          },
+        ];
+
+        function buildQuiz() {
+          const output = [];
+      
+          myQuestions.forEach((currentQuestion, questionNumber) => {
+            // questionNumber++;
+            const answers = [];
+     questionNumber=questionNumber++;
+            for (letter in currentQuestion.answers) {
+              answers.push(
+                `<br><label><input type="radio" name="question${questionNumber}" value="${letter}"/>${letter} :  &nbsp;&nbsp;${currentQuestion.answers[letter]}</lable><br>`
+              );
+            }
+            output.push(
+              `<div class="question" style="color:yellow">${questionNumber}]&nbsp;&nbsp;${
+                currentQuestion.question
+              }</div><div class="answers">${answers.join("")}</div><br><br>
+                    `
+            );
+          });
+          quizContainer.innerHTML = output.join("");
+        }
+        function showResult() {
+          const answerContainers = quizContainer.querySelectorAll(".answers");
+          let numCorrect = 0;
+          myQuestions.forEach((currentQuestion, questionNumber) => {
+    
+            //find selected answer
+            const answerContainer = answerContainers[questionNumber];
+            const selector = `input[name=question${questionNumber}]:checked`;
+            const userAnswer = (answerContainer.querySelector(selector) || {})
+              .value;
+
+            if (userAnswer === currentQuestion.correctAnswer) {
+              numCorrect++;
+              answerContainer.style.color = "green";
+            } else {
+              answerContainer.style.color = "red";
+            }
+          });
+          //   alert( resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length} correct`);
+          resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length} correct`;
+        }
+
+        buildQuiz();
+
+        submitButton.addEventListener("click", showResult);
+      </script>
+    </body>
+  </body>
+</html>
