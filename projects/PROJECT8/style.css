@@ -1,0 +1,136 @@
+*{
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: #f0f4f5;
+    flex-wrap: wrap;
+}
+section{
+    margin: 35px 35px 0px 35px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+ section #logo{
+    
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    left: 130px;
+        
+}
+section nav ul {
+    flex-wrap: wrap;
+    display: flex;
+    margin-right: 30px;
+    justify-content: right;
+    gap: 75px;
+    cursor: pointer;
+}   
+section nav ul li{
+   font-weight: 600;
+   list-style: none;
+   font-size: 14px; 
+   flex-wrap: wrap;
+}
+a{
+text-decoration: none;
+color: black;
+flex-wrap: wrap;
+ }
+section nav ul li a:hover{
+    transition: 2s;
+        
+    color: blue;
+    
+    text-decoration: underline;
+ }
+ 
+#main{
+display: flex;
+flex-wrap: wrap;
+word-wrap: normal;
+}
+.leftmain{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-flow: column;
+    margin-left: 40px;
+   background-image: url(./assets/stethoscope.png);
+   backface-visibility: hidden;
+   background-size: auto;
+    
+}
+.gap{
+    flex-wrap: wrap;
+    width: 700px;
+    margin-left: 130px;
+    
+}
+.heading h1{
+    flex-wrap: wrap;
+    font-weight: bolder;
+    font-size: 65px;
+
+}
+.content p
+{
+    flex-wrap: wrap;
+font-size: 13px;
+font-weight: 400;
+padding: 0px 130px 0px 0px;
+line-height: 20px;
+}
+.lastdiv{
+    flex-wrap: wrap;
+position: absolute;
+
+
+}
+
+.lastdiv button{
+    background-color: rgb(4, 131, 4);
+    color: white;
+    width: 150px;
+    flex-wrap: wrap;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.lastdiv button:hover{
+    background-color: #f0f4f5;
+    color: black;
+    transition: 2s;
+}
+
+#bottomAngle{
+position: relative;
+margin-left: 500px;
+
+}
+#mouse{
+position: relative;
+left: 50px;
+}
+
+
+.rightmain{
+    position: relative;     
+}
+#yellowbox{
+    position: absolute;
+    top: 200px;
+    left: 200px;
+}
+#greenBox{
+    position: absolute;
+    top: 180px;
+    left: 180px;
+    
+}
+#doctor{
+position: relative;
+z-index: 2;
+flex-wrap: wrap;
+}

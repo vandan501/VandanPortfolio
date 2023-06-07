@@ -1,0 +1,93 @@
+*{
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: #f0f4f5;
+}
+section{
+    margin: 35px 35px 0px 35px;
+    align-items: center;
+}
+ section #logo{
+    
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    left: 130px;
+        
+}
+section nav ul {
+    
+    display: flex;
+    margin-right: 30px;
+    justify-content: right;
+    gap: 75px;
+    cursor: pointer;
+}   
+section nav ul li{
+   font-weight: 600;
+   list-style: none;
+   font-size: 14px; 
+}
+a{
+text-decoration: none;
+color: black;
+ }
+section nav ul li a:hover{
+    transition: 2s;
+        
+    color: blue;
+    
+    text-decoration: underline;
+ }
+.contact{
+    /* border: 1px solid black; */
+   padding: 40px;
+   /* cursor: pointer; */
+}
+.contact h2{
+    text-align: center;
+    
+}
+ /* contact form */
+ .contactform{
+    padding: 20px;
+    font-size: medium;
+    font-weight: 900;
+    width: 300px;
+    margin: auto;
+    gap: 5px;
+    background-color: #f0f4f5;
+    box-shadow: 0 0 5px 2px #000; 
+  
+    /* border: 1px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+ }
+ input{
+    width: 250px;
+    height: 30px;
+    /* cursor: pointer; */
+
+ }
+ textarea{
+    width: 250px;
+    
+ }
+ button{
+    padding: 7px;
+    cursor: pointer;
+
+    width: 250px;
+    background-color: #22bc7e;
+    color: wheat;
+    font-weight: 800;
+    font-size: 16px;
+ }
+ button:hover{
+    background-color: #f0f4f5;
+    color: black;
+    transition: 2s;
+}

@@ -1,0 +1,183 @@
+
+        body    
+         {
+            background-color: rgb(17,24,39);   
+           
+         }
+         /* nav sec */
+        nav ul{
+            display: flex;
+            gap: 65px;
+            list-style: none;
+            justify-content: right;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+        li a{
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 13px;
+        }        
+        a::after{
+            border: 1px solid wheat;
+            border-radius: 1px;
+            background-color: blue;
+            cursor: pointer;
+        }
+        /* main sec */
+        .main{
+            display: flex;
+            height: 650px;
+            cursor: pointer;
+            /* flex-wrap: wrap; */
+            justify-content: center;
+        }
+        .leftmain{
+            color: white;
+            margin-top: 230px;
+            justify-content: center;
+
+            /* margin: 0 auto; */
+            font-size: 20px;
+        }
+        h2{
+            font-size: 30px;
+        }
+        .leftmain img{
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+
+        }
+        span{
+            color: yellow;
+            font-size: 30px;
+        }
+        .rightmain img{
+            height: 600px;
+            width: 600px;
+           
+        }
+        /* section2 */
+        #projects{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+        }
+        h1{
+            color: wheat;
+            gap: 5px;
+            font-size: 30px;
+            text-align: center;
+        }
+        .line{
+            width: 200px;
+            height: 6px;
+            align-self: center;
+            background-color: blue;
+        }
+
+        /* projects */
+        .projectshow{
+            margin-top: 60px;
+            cursor: pointer;
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat(2,330px);            
+            grid-template-rows: 280px 280x ;
+            color: white;
+            text-align: center;
+            row-gap: 0px;
+
+        }
+        footer{
+            cursor: pointer;
+            margin-top: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+        .links{ 
+            margin-top: 40px;
+            align-content: center;
+            display: flex;
+            justify-content: center;
+            gap: 65px;
+
+        }
+        #menu{
+            width: 30px;
+            height: 30px;
+            display: none;
+        }
+
+        @media screen and (max-height: 576px)
+        {
+            #menu{
+                width: 30px;
+                height: 30px;
+                margin: 10px;
+                cursor: pointer;
+                display: block;
+            }
+            nav ul{
+                display: none;
+            }
+            .main{
+                display: flex;
+                height: 650px;
+                flex-flow: column;
+                cursor: pointer;
+                align-items: center;
+                align-self: center;
+                justify-content: center;
+            }
+            .leftmain{
+                color: white;
+                margin-top: 35px;
+                text-align: center;
+                font-size: 15px;
+            }
+            .rightmain img{
+                margin-top: 40px;
+                height: 300px;
+                width: 300px;
+               
+            }
+            .projectshow{
+                margin-top: 20px;
+                cursor: pointer;
+                display: grid;
+                justify-content: center;
+                grid-template-columns: repeat(1,320px);            
+                grid-template-rows: 260px 260x ;
+                color: white;
+                text-align: center;
+                row-gap: 0px;
+    
+            }
+            footer{
+                cursor: pointer;
+                margin-top: 60px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+    
+            }
+            .links{ 
+                margin-top: 40px;
+                align-content: center;
+                display: flex;
+                justify-content: center;
+                gap: 65px;
+    
+            }
+        
+    
+    
+        
+        }
+
+
