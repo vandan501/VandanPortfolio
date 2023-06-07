@@ -1,0 +1,108 @@
+/* universal */
+*{
+    font-family: 'Roboto Mono', monospace;
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+/* body */
+body{
+    height: 100%;
+    width: 100%;
+}
+/* nav */
+nav{
+    margin: 50px;
+    display: flex;
+
+    justify-content: space-between
+}
+nav ul{
+    display: flex;
+    list-style: none;
+    margin-top: 15px;
+    gap: 20px;
+}
+nav ul li{
+    display: flex;
+    margin-left: 60px;
+    color: black;
+    font-size: larger;
+
+
+}
+nav ul li:hover{
+    color: blue;
+    animation-duration: 2s;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: larger;
+
+}
+/* btn */
+.btn1{
+    border-radius: 20px;
+    width: 130px;
+    height: 50px;
+    background-color: blueviolet;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+.btn2{
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-left: 90px;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    background-color: blueviolet;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+}
+    
+/* mian section */
+.hero{
+    display: flex;
+    justify-content: center;
+}
+
+.left{
+width: 730px;
+margin-top: 90px;
+} 
+
+h1{
+    color: rgb(55, 55, 124);
+    font-size: 60px;
+    margin-top: 80px;
+    margin-left: 90px;
+    margin-right: 30px;
+
+}
+span{
+    color: coral;
+}
+
+p{
+    margin-top: 80px;
+    color: rgb(55, 55, 124);
+    font-weight: 700;   
+    margin-left: 90px;
+    margin-right: 30px;
+
+}
+.btn1:hover{
+    color: black;
+    background-color: chartreuse;
+
+}
+.btn2:hover{
+    color: black;
+    background-color: chartreuse;
+
+}
