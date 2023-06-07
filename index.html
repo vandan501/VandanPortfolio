@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=1024">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="manual-css.css">
+  <title>Vandan Raval | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.tailwindcss.com/2.2.16/tailwind.min.css" rel="stylesheet">
+
+  <style>
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .flip-box {
+          background-color: transparent;
+          width: 300px;
+          height: 200px;
+          border: 1px solid #f1f1f1;
+          perspective: 1000px;
+        }
+        
+        .flip-box-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          transition: transform 0.8s;
+          transform-style: preserve-3d;
+        }
+        
+        .flip-box:hover .flip-box-inner {
+          transform: rotateY(180deg);
+        }
+        
+        .flip-box-front, .flip-box-back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+        }
+        
+        .flip-box-front {
+          background-color: #bbb;
+          color: black;
+        }
+        
+        .flip-box-back {
+          background-color: #555;
+          color: white;
+          transform: rotateY(180deg);
+        }
+
+    table {
+        border-collapse: separate;
+        border-spacing: 10px;
+    }
+
+    td {
+        padding: 10px;
+        text-align: left;
+    }
+    #smlink:hover{
+        scale: 1.1;
+    }
+    * {
+      font-family: "Roboto", sans-serif;
+    }
+  </style>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* skills button hover css */
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+  </style>
+  <script>
+    function scrollToSection(sectionId) {
+      const section = document.querySelector(sectionId);
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #ffff; /* Replace with your desired background color */
+    }
+
+    .intro-text {
+      font-family: 'Roboto', sans-serif;
+      font-size: 36px;
+      color: #FFFFFF; /* Replace with your desired text color */
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation-name: fadeInUp;
+      animation-duration: 1.5s;
+      animation-delay: 0.5s;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <nav class="fixed top-0 left-0 w-full bg-black text-white p-4 cursor-pointer flex justify-evenly " style="z-index: 1;">
+        <div class="flex  ">
+        
+          <div class="md:hidden">
+            <button type="button" id="menu-toggle" class="text-white focus:outline-none">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+          <ul class="hidden md:flex flex-col md:flex-row  space-y-4 md:space-y-0 md:space-x-14 md:justify-evenly" id="menu">
+            <li ><a class="hover:text-orange-500" href="#home" onclick="scrollToSection('#home')">Home</a></li>
+            <li><a class="hover:text-orange-500" href="#about" onclick="scrollToSection('#about')">About</a></li>
+            <li><a class="hover:text-orange-500" href="#projects" onclick="scrollToSection('#projects')">Projects/Portfolio</a></li>
+            <li><a class="hover:text-orange-500" href="#skills" onclick="scrollToSection('#skills')">Skills</a></li>
+            <li><a class="hover:text-orange-500" href="#resume" onclick="scrollToSection('#resume')">Resume/CV</a></li>
+            <li><a class="hover:text-orange-500" href="#contact" onclick="scrollToSection('#contact')">Contact</a></li>
+            <li><a class="hover:text-orange-500" href="#services" onclick="scrollToSection('#services')">Services</a></li>
+            <li><a class="hover:text-orange-500" href="#social-media" onclick="scrollToSection('#social-media')">Social Media</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+      
+      <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+          var menu = document.getElementById('menu');
+          menu.classList.toggle('hidden');
+        });
+      </script>
+               
+    <section id="home" class="h-screen flex items-center justify-center">
+        <div class="flex flex-wrap-reverse justify-center items-center w-full">
+          <div class="w-full md:w-1/2 text-center md:text-right">
+            <h2 class="text-black font-extrabold text-5xl mb-10">Hye! I am Vandan Raval.</h2>
+            <h1 class="text-4xl text-black font-bold mb-4" id="typing-text"></h1>
+          </div>
+          <div class="w-full md:w-1/2 text-center">
+            <img src="./home.svg" alt="home" class="mx-auto" width="450px">
+          </div>
+        </div>
+      </section>
+      
+    <script>
+        // JavaScript code
+    const textElement = document.getElementById("typing-text");
+    const words = ["Web Developer", "Full Stack Developer", "MERN Stack Developer"];
+    let wordIndex = 0;
+    let letterIndex = 0;
+    let typingDelay = 150;
+    let erasingDelay = 100;
+    let newTextDelay = 2000;
+    
+    function type() {
+        if (letterIndex < words[wordIndex].length) {
+            textElement.textContent += words[wordIndex].charAt(letterIndex);
+            letterIndex++;
+            setTimeout(type, typingDelay);
+        } else {
+            setTimeout(erase, newTextDelay);
+        }
+    }
+    
+    function erase() {
+        if (letterIndex > 0) {
+            textElement.textContent = words[wordIndex].substring(0, letterIndex - 1);
+            letterIndex--;
+            setTimeout(erase, erasingDelay);
+        } else {
+            wordIndex++;
+            if (wordIndex >= words.length) {
+                wordIndex = 0;
+            }
+            setTimeout(type, typingDelay);
+        }
+    }
+    
+    document.addEventListener("DOMContentLoaded", function () {
+        if (words.length) {
+            setTimeout(type, newTextDelay + 250);
+        }
+    });
+    
+      </script>  
+  <section id="about" class="bg-gray-100 h-screen flex justify-center">
+    <div style="width: 900px;" class="container  py-16 self-center ">
+      <h2 class="text-4xl font-bold mb-8 text-center">About Me</h2>
+      <div class="self-center md:grid-cols-2 gap-8">
+        <div class="shadow-lg p-8">
+          <p class="text-lg text-gray-800">
+            Hi, I'm <b>Vandan Raval</b>, a passionate web developer and a computer engineering student in my third year. With a strong foundation in full-stack web development, I strive to create visually appealing and user-friendly websites. My educational background and practical experience have equipped me with a solid understanding of HTML, CSS, JavaScript, and various frameworks. I enjoy solving complex problems and transforming ideas into functional, scalable, and efficient web solutions. With a constant thirst for learning and staying up-to-date with the latest industry trends, I am committed to delivering high-quality work and exceeding client expectations. Let's work together to bring your web projects to life!
+          </p>
+        </div>
+        <div>
+          <!-- Add any additional content for the second column -->
+        </div>
+      </div>
+    </div>
+  </section>
+  
+      
+
+  <section id="projects" style="background-color: white;height: max-content;">
+    <div class="container mx-auto py-16" >
+      <h2 class="text-4xl font-bold mb-8 text-center">Projects/Portfolio</h2>
+    <div style="display: flex; flex-wrap: wrap;justify-content: space-around;">
+      <div style="border:1px solid black; width: 100%;height: max-content; display: flex;justify-content: space-evenly;flex-wrap: wrap;row-gap: 30px;padding: 20px;">
+      
+        <a href="./projects/PROJECT1/index.html" target="_blank">
+        
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <img src="./projects/PROJECT1/pro1-output.png" alt="Paris" style="width:300px;height:200px">
+            </div>
+            <div class="flip-box-back">
+              <h2>Leading Page </h2>
+              <p>Userd HTML-CSS</p>
+            </div>
+
+          </div>
+        </div>
+      </a>
+        
+      <a href="./projects/PROJECT2/index.html" target="_blank">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <img src="./projects/PROJECT2/pro2-goat-output.png" alt="Paris" style="width:300px;height:200px">
+            </div>
+            <div class="flip-box-back">
+              <h2>Goat watch leading Page</h2>
+              <br><br>
+              <p>only for practice purpose</p>
+            </div>
+          </div>
+        </div>
+      </a>
+<a href="./projects/PROJECT3/index.html" target="_blank">     
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <img src="./projects/PROJECT3/output-3.png" alt="Paris" style="width:300px;height:200px">
+            </div>
+            <div class="flip-box-back">
+              <h2>Static Restaurant website clone</h2>
+ 
+            </div>
+          </div>
+        </div>
+</a>
+        <a href="./projects/PROJECT4/index.html" target="_blank">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <img src="./projects/PROJECT4/output4.png" alt="Paris" style="width:300px;height:200px">
+            </div>
+            <div class="flip-box-back">
+              <h2>Static website leading page</h2>
+            </div>
+          </div>
+        </div>
+</a>
+
+<a href="./projects/PROJECT5/index.html" target="_blank">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <img src="./projects/PROJECT5/output5.png" alt="Paris" style="width:300px;height:200px">
+            </div>
+            <div class="flip-box-back">
+              <h2>Demo Project</h2>
+              <br><br>
+              <p>only for practice purpose</p>
+            </div>
+          </div>
+        </div>
+      </a>
+<a href="./projects/PROJECT6/index.html" target="_blank">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <!-- <img src="./projects/PROJECT6/output-part2.png" alt="Paris" style="width:300px;height:200px"> -->
+              <img src="./projects/PROJECT6/output-part1.png" alt="Paris" style="width:300px;height:200px">
+            </div>
+            <div class="flip-box-back">
+              <h2>Portfolio clone</h2>
+              <br><br>
+              <p>Here i have made portfolio clone using media query CSS for mobile and desktop site</p>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="./projects/PROJECT7/index.html" target="_blank">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front" style="overflow: scroll;"">
+              <img src="./projects/PROJECT7/op7.png" alt="Paris" >
+            </div>
+            <div class="flip-box-back">
+              <h2>Beast 3.O</h2>
+              <br> <br>
+              <p>Welcome to Beast 3.0, your ultimate destination for top-quality headphones! Our website is designed to provide you with a seamless shopping experience for all your audio needs.</p>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="./projects/PROJECT8/index.html" target="_blank">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <img src="./projects/PROJECT8/medifineop1.png" alt="Paris" style="width:300px;height:200px">
+            </div>
+            <div class="flip-box-back">
+              <h2>Dr. Static website</h2>
+              <br><br>
+              <p>Welcome to our Doctor's Website! We are dedicated to providing you with a user-friendly platform to access essential information about our medical practice and services. </p>
+            </div>
+          </div>
+        </div>
+      </a>
+     
+
+      <a href="./projects/PROJECT9/index.html" target="_blank">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <img src="./projects/PROJECT9/op/Screenshot (202).png" alt="Paris" style="width:300px;height:200px">
+            </div>
+            <div class="flip-box-back">
+              <h2>Real-Estate website clone for practice</h2>
+              <br><br>
+              <p>Welcome to our Real Estate website! We are delighted to present a comprehensive platform dedicated to helping you navigate the world of real estate. </p>
+            </div>
+          </div>
+        </div>
+      </a>
+     
+
+      <a href="./projects/PROJECT10/dist/pwhome.html" target="_blank">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front" style="overflow: scroll;">
+              <img src="./projects/PROJECT10/127.0.0.1_5500_dist_pwhome.html.png" alt="Paris" >
+            </div>
+            <div class="flip-box-back">
+              <h2>PW WEBSITE CLONE </h2>
+              <br><br>
+              <p>Here i have created PW clone using Tailwind CSS only</p>
+            </div>
+          </div>
+        </div>
+      </a>
+     
+
+      <a href="./projects/PROJECT11/index.html" target="_blank">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front" style="overflow: scroll;">
+              <img src="./projects/PROJECT11/P11.png" alt="Paris" >
+            </div>
+            <div class="flip-box-back">
+              <h2>MCQ Quiz App</h2>
+              <br> <br>
+              <p>Welcome to our MCQ Quiz App! This interactive platform is designed to test your knowledge and enhance your learning experience.</p>
+    
+            </div>
+          </div>
+        </div>
+      </a>
+     
+
+      <a href="./projects/project12/index.html" target="_blank">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front" style="overflow: scroll;">
+              <img src="./projects/PROJECT12/op12.png" alt="Paris" >
+            </div>
+            <div class="flip-box-back">
+              <h2>LifechemPharma</h2>
+              <br> <br>
+              <p>This is a practice project. For educational purposes only. No copyright intended.</p>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+<section id="skills" class="bg-gray-100 h-screen">
+  <center>    <div class="container mx-auto py-16">
+      <h2 class="text-4xl font-bold mb-8 text-center">Skills</h2>
+      <div class="grid grid-cols-2 gap-8">
+        <button class="glow-on-hover" type="button">WEB DEVELOPMENT</button>
+        <button class="glow-on-hover" type="button">HTML</button>
+        <button class="glow-on-hover" type="button">CSS/ TAILWIND CSS</button>
+        <!-- <button class="glow-on-hover" type="button"></button> -->
+        <button class="glow-on-hover" type="button">JAVASCRIPT</button>
+        <button class="glow-on-hover" type="button">BOOTSTRAP</button>
+        <button class="glow-on-hover" type="button">JAVA</button>
+        <button class="glow-on-hover" type="button">MYSQL</button>
+        <button class="glow-on-hover" type="button">MongoDB</button>
+        <button class="glow-on-hover" type="button">nodeJS</button>
+        <button class="glow-on-hover" type="button">GIT</button>
+        <button class="glow-on-hover" type="button">Responsive Website</button>
+        <button class="glow-on-hover" type="button">python and php (basics)</button>
+      </div>
+      </div>
+    </center>
+
+  </section>
+  
+
+  <section id="resume" class=" min-h-full bg-slate-300">
+    <div class="container mx-auto py-16">
+      <h2 class="text-4xl font-bold mb-8 text-center">Resume/CV</h2>
+      <div class="flex flex-wrap items-center justify-evenly" >
+       <a href="./vandan CV demo.pdf"> 
+        <img src="./vandan CV demo_page-0001.jpg" alt="cv" width="400px" height="300px" title="click here for show resume"> </a>
+        <a href="./vandan CV demo.pdf" download class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+            Download Resume
+          </a>
+      
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <section id="contact" class="bg-gray-100 h-screen">
+    <div class="container mx-auto py-16">
+      <h2 class="text-4xl font-bold mb-8 text-center">Contact</h2>
+  
+      <!-- Contact Details -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8" style="display: flex;">
+        <div>
+        <iframe style="width: 600px; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14683.043908665237!2d72.55509279049267!3d23.069223008148565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e837dd0b01659%3A0x49145d3bc6edefea!2sNava%20Vadaj%2C%20Ahmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1686074804032!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <table >
+            <tr>
+                <td><img src="./images/user.png" alt="" width="35px"></td>
+                <td>Vandan Raval</td>
+            </tr>
+            <tr>
+                <td><img src="./images/email.gif" alt="" width="35px"></td>
+                <td>vandanraval2002@gmail.com</td>
+            </tr>
+            <tr>
+                <td><img src="./images/call-center.gif" alt="" width="35px"></td>
+                <td>+91 6353091941</td>
+            </tr>
+        </table>
+    </div>
+            <div>
+          <!-- Contact Form -->
+          <h3 class="text-xl font-semibold mb-4">Get in Touch</h3>
+          <form>
+            <div class="mb-4">
+              <label for="name" class="block mb-2">Name</label>
+              <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded" required>
+            </div>
+            <div class="mb-4">
+              <label for="email" class="block mb-2">Email</label>
+              <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded" required>
+            </div>
+            <div class="mb-4">
+              <label for="message" class="block mb-2">Message</label>
+              <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded" required></textarea>
+            </div>
+            <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded text-center m-auto">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="bg-white h-screen">
+    <div class="container mx-auto py-16">
+        <h2 class="text-4xl font-bold mb-8 text-center">Services</h2>
+        
+        <div class="grid grid-cols-3 gap-8" style="margin: 30px;flex-wrap: wrap;">
+            <div class="service-item" style="width: 350px;height: 400px; box-shadow: 5px 10px #888888; padding: 10px;text-align: center;display: flex;flex-flow: column;justify-content: center;align-items: center;">
+                <img src="./images/monitor.gif" alt="Service 1" class="service-image" style="width: 200px;">
+                <h1>Web Design</h1>
+                <p class="service-description">We create visually appealing and user-friendly websites that meet your business needs.</p>
+            </div>
+            
+            <div class="service-item" style="width: 350px;height: 400px; box-shadow: 5px 10px #888888; padding: 10px;text-align: center;
+            display: flex;flex-flow: column;justify-content: center;align-items: center;">
+                <img src="./images/html.gif" alt="Service 2" class="service-image"style="width: 200px;">
+                <h1 >Web Development</h1>
+                <p class="service-description">Our experienced developers build custom web applications tailored to your requirements.</p>
+            </div>
+            
+            <div class="service-item" style="width: 350px;height: 400px; box-shadow: 5px 10px #888888; padding: 10px;text-align: center;display: flex;flex-flow: column;justify-content: center;align-items: center;">
+                <img src="./images/online-shopping.gif" alt="Service 3" class="service-image" style="width: 200px;">
+                <h1 >E-commerce Solutions</h1>
+                <p class="service-description">We develop robust and secure e-commerce websites to help you sell your products online.</p>
+            </div>
+            
+            <!-- Add more service items as needed -->
+        </div>
+    </div>
+</section>
+
+  <section id="social-media" class="bg-gray-100 h-screen">
+    <div class="container mx-auto py-16 mb-28">
+      <h2 class="text-4xl font-bold mb-8 text-center">Social Media</h2>
+      <div class=" mb-28" style="display: flex; justify-content: space-evenly; align-items: center; margin: 0 auto;margin-top: 200px;gap: 20px;">
+        <div >
+            <a href="https://www.linkedin.com/in/vandan-raval-a91638255/">
+                <img src="./images/linkedin.png" alt="" style="width: 100px;" id="smlink">
+            </a>
+        </div>
+        <div>
+            <a href="https://github.com/vandan501">
+                <img src="./images/git.png" alt="" style="width: 100px;" id="smlink">
+            </a>
+        </div>
+        <div>
+            <a href="https://www.instagram.com/v_d_raval/?igshid=89uru0rrphfd">
+                <img src="./images/instagram.png" alt="" style="width: 100px;" id="smlink">
+            </a>
+        </div>
+        <div>
+            <a href="https://www.youtube.com/channel/UCKNepWhLfbUq-S8nZ-rJo5A">
+                <img src="./images/youtube.png" alt="" style="width: 100px;" id="smlink">
+            </a>
+        </div>
+        <div>
+            <a href="https://www.linkedin.com/in/vandan-raval-a91638255/">
+                <img src="./images/facebook.png" alt="" style="width: 100px;" id="smlink">
+            </a>
+        </div>
+    
+    <div style="margin: auto;">
+      <center>
+      <h1 class="text-4xl" style="font-weight: bolder;">Register Now to use free A.I tools</h1>
+      <br><br>
+      <a href="https://o-trim.co/useAItools" target="_blank">   
+          <img src="./O-Trim (1).png" alt=""></a> 
+        </center>
+    </div>
+
+  </div>
+
+  </div>
+
+  </section>
+</body>
+</html>
+</body>
+</html>
